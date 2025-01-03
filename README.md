@@ -1,5 +1,7 @@
 ### Description
 
+For this project I wanted to create a regression model that could reasonably predict house prices with the dataset given to us. I also wanted to take that dataset and create an interavtive dashboard that was easy for stakeholders to use, and to explore the data about house prices.
+
 There are two goals with this project;
 
 1 ) To develop a robust machine learning model that accurately predicts house prices based on the features given. 
