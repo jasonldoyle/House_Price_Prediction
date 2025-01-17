@@ -1,53 +1,55 @@
-### Description
+# Table of Contents
+ - [Executive Summary](#executive-summary)
+ - [Key Findings](#key-findings)
+ - [Introduction](#introduction)
+ - [Dataset Overview](#dataset)
+ - [Methodology](#methodology)
+   - [Regression Models](#regression-models)
+ - [Results](#results)
+ - [Dashboard](#dashboard-material)
 
-For this project I wanted to create a regression model that could reasonably predict house prices with the dataset given to us. I also wanted to take that dataset and create an interavtive dashboard that was easy for stakeholders to use, and to explore the data about house prices.
 
-There are two goals with this project;
+# Executive Summary
 
-1 ) To develop a robust machine learning model that accurately predicts house prices based on the features given. 
+This project aimed to create a machine learning regression model to predict house prices accurately and develop an interactive Tableau dashboard for stakeholders to explore and visualize house price data. The final model achieved an R² Test Score of 0.87, indicating strong predictive performance, and the dashboard provides a user-friendly platform for exploring trends and patterns.
 
-2 ) To create an interactive dashboard that allows stakeholders explore and visualise house price data.
+# Key Findings
+  - Model Performance: The XGBoost model with parameters (learning_rate=0.1, max_depth=5, n_estimators=300) outperformed other models, achieving an R² Test Score of 0.87 and a Root Mean Squared Error (RMSE) of approximately 81,952.
+  - Feature Insights: Key features affecting house prices included location, square footage, and year built.
+  - Stakeholder Accessibility: The Tableau dashboard enables stakeholders to interactively visualize house prices, explore relationships between features, and identify trends.
+<img width="687" alt="Screenshot 2024-08-13 at 22 00 28 copy" src="https://github.com/user-attachments/assets/925e302b-af37-4ec2-9ee7-c19e82811075">
 
-### Dataset
+# Introduction
 
-The full dataset is linked here [Link](https://www.kaggle.com/datasets/harlfoxem/housesalesprediction)
+The goal of this project was twofold:
+	1.	Develop a robust machine learning model to predict house prices accurately.
+	2.	Create an interactive dashboard to enable stakeholders to visualize and explore house price data effectively.
 
-The cleaned dataset I used in the project [Link](https://github.com/jasonldoyle/House-Price-Prediction/blob/b769b05ddbe1a93a1cf3e72fe70b6b87fcf3ab8a/Dataset/HouseData.csv)
+# Dataset 
+ - **Source:** Dataset linked here: Full Dataset Link | Cleaned Dataset Link
+ - **Size:** 21,060 entries with 15 features.
+ - **Memory Usage:** 2.4+ MB.
+ - **Features:** Include price, location, square footage, number of bedrooms, and year built.
 
-21060 entries, total 15 columns - Memory Usage: 2.4+ MB
+# Methodology
+ - **Data Preparation:** Cleaned the dataset, performed feature engineering, and handled missing values.
+ - **Model Selection:** Evaluated multiple regression models before applying grid search to optimize the XGBoost model for the best performance.
+   - Linear Regression
+   - Polynomial Regression
+   - Ridge Regression
+   - Lasso Regression
+   - Elastic Net
+   - XGBoost
+- **Visualization:** Built an interactive Tableau dashboard to present findings and enable data exploration.
 
-### Notebook
+### Regression Models
+ - **Linear Regression:** Established baseline performance.
+ - **Polynomial Regression:** Improved accuracy but prone to overfitting.
+ - **Ridge and Lasso:** Improved regularization but underperformed compared to XGBoost.
+ - **Elastic Net:** Balanced regularization approach but not as effective as XGBoost.
+ - **XGBoost:** Final model selected due to superior performance.
 
-Models used 
-
-- Linear Regression
-- Polynomial Regression
-- Ridge
-- Lasso
-- Elastic Net
-- XGB
-
-Final model
-
-- XGBoost - {'learning_rate': 0.1, 'max_depth': 5, 'n_estimators': 300}
-
-Available at:
-
-|  | Notebook |
-| --- | --- |
-| Collab | (https://colab.research.google.com/drive/1_S51DZZhKQ_NYgNKOzUrctJGFQyeCevk?usp=sharing) |
-| Kaggle | (https://www.kaggle.com/code/jasonldoyle/house-price-prediction/notebook) |
-| Github | (https://github.com/jasonldoyle/House-Price-Prediction/blob/b769b05ddbe1a93a1cf3e72fe70b6b87fcf3ab8a/House_Data_Predictor.ipynb) |
-| Tableau | (https://public.tableau.com/app/profile/jason.doyle5808/viz/P1_House_Price_Prediction_Dashboard/Seattle) |
-
-### Tech-stack + Libraries
-
-- **Python version**: 3.10.12
-- **Packages**: pandas, numpy, matplotlib, seaborn, sklearn, xgboost
-- **Visualization Tool**: Tableau
-
-### **Results**
-
+# Results
 | Metric | Value |
 | --- | --- |
 | R² Test Score | 0.87 |
@@ -56,9 +58,7 @@ Available at:
 | Train Root Mean Squared Error | 71595.41 |
 | Mean Absolute Error | 6716080061.49 |
 
-<img width="687" alt="Screenshot 2024-08-13 at 22 00 28 copy" src="https://github.com/user-attachments/assets/925e302b-af37-4ec2-9ee7-c19e82811075">
-
-### Visualisation
+# Dashboard Material
 
 ### [Tableau Link](https://public.tableau.com/views/P1_House_Price_Prediction_Dashboard/Seattle?:language=en-GB&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
